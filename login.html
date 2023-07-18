@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  <style>
+    body {
+      background-image: url("background.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="Logo_image.png" alt="Logo">
+    </div>
+    <div class="header-text">
+        <h1>Welcome to our Login Page</h1>
+    </div>
+  </header>
+  <div class="login-body">
+    <div class="container">
+      <div class="title"><span>Login Here</span></div>
+      <form id="login-form">
+        <div class="row">
+          <i class="fas fa-user"></i>
+          <input type="text" id="user-input" placeholder="Username" required>
+        </div>
+        <div class="row">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="password-input" placeholder="Password" required>
+        </div>
+        <div class="row button">
+          <input type="submit" value="Login">
+        </div>
+      </form>
+    </div>
+  </div>
+  <script>
+    document.getElementById("login-form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Get the input values
+      var user = document.getElementById("user-input").value;
+      var password = document.getElementById("password-input").value;
+
+      // Perform validation or check against backend for valid credentials
+      // For demonstration purposes, let's assume valid credentials are:
+      var validUser = "admin";
+      var validPassword = "admin123";
+
+      if (user === validUser && password === validPassword) {
+        // Redirect to index.html on successful login
+        window.location.href = "index.html";
+      } else {
+        // Handle invalid login
+        alert("Invalid email or password. Please try again.");
+      }
+    });
+  </script>
+
+</body>
+</html>
